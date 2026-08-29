@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manoj Prabhahar.J | Product Manager | Business Analyst</title>
+  <meta name="description" content="Product Manager, Business Analyst & Customer Support Specialist with 6.5+ years experience in SaaS, POS, CRM, payments and ESG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --surface-2: #243044;
+      --border: #2d3a4f;
+      --text: #e8eef7;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-soft: rgba(59, 130, 246, 0.15);
+      --success: #22c55e;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 20, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: white !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover);
+      color: white !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero .title {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero .summary {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-2);
+      border-color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* About / Summary cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: var(--surface-2);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Experience */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+
+    .exp-card:hover {
+      border-color: var(--accent);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .exp-dates {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--surface-2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .exp-card ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .exp-card li {
+      margin-bottom: 8px;
+    }
+
+    .exp-card li::marker {
+      color: var(--accent);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .tag.neutral {
+      background: var(--surface-2);
+      color: var(--text-muted);
+    }
+
+    /* Achievements */
+    .achievements {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .ach-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .ach-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .ach-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .ach-card strong {
+      color: var(--text);
+    }
+
+    /* Education */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .edu-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+    }
+
+    .edu-school {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .edu-year {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: var(--surface-2);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--accent);
+    }
+
+    .contact-item .icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-item .label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .contact-item .value {
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+        gap: 16px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .avatar {
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero-meta {
+        justify-content: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .exp-header {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">Manoj<span>.</span>Prabhahar</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="avatar">MP</div>
+        <div>
+          <h1>Manoj Prabhahar.J</h1>
+          <p class="title">Product Manager | Business Analyst | Customer Support Specialist</p>
+          <p class="summary">
+            Result-oriented Product, Project and Business Analyst professional with <strong>6.5+ years</strong> of cross-functional experience, including <strong>2.9 years as a Business Analyst</strong>. Experienced across SaaS products, POS, CRM, Soundbox, payment integration, HSE/ESG initiatives, customer success, QA and stakeholder collaboration.
+          </p>
+          <div class="hero-meta">
+            <span>📍 Madurai, Tamil Nadu, India</span>
+            <span>📧 prabhabharmanoj2010@gmail.com</span>
+            <span>📱 +91 98433 37191</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#experience" class="btn btn-secondary">View Experience</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About / Highlights -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Professional Snapshot</h2>
+      <div class="card">
+        <p style="color: var(--text-muted); margin-bottom: 8px;">
+          Strong in requirements analysis, process improvement, product lifecycle coordination, Agile delivery, data-driven decision-making and cross-functional execution. Proven record of translating business needs into practical product and process improvements with measurable commercial and operational outcomes.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">6.5+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$50M+</div>
+            <div class="stat-label">Cost Savings Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">$5M+</div>
+            <div class="stat-label">Business Opportunities</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">90%</div>
+            <div class="stat-label">Targets Exceeded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="timeline">
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Product Manager / Business Analyst / Customer Support – Operations</div>
+              <div class="exp-company">Warely Technology Pte Ltd</div>
+            </div>
+            <span class="exp-dates">2025 – 2026</span>
+          </div>
+          <ul>
+            <li>Led end-to-end product lifecycle activities across Point of Sale (POS), AI-powered chatbot and Warely Soundbox CRM solutions.</li>
+            <li>Spearheaded HitPay, Rayyd and Allinpay payments integration with the Soundbox & POS Admin Panel to enable seamless merchant payment workflows.</li>
+            <li>Drove QR-code updates and source-code refactoring initiatives, including module renaming and backend optimization.</li>
+            <li>Created comprehensive CRM ticketing-system documentation to standardize support workflows and improve team efficiency.</li>
+            <li>Worked across product, engineering and support functions to translate business needs into actionable product improvements.</li>
+            <li>Developed and completed comprehensive workflow user manuals for Xero, BCRS, Offline POS, and Grab Food integrations.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Business Analyst</div>
+              <div class="exp-company">Avgira Technologies</div>
+            </div>
+            <span class="exp-dates">2024 – 2025</span>
+          </div>
+          <ul>
+            <li>Supported HSE and ESG initiatives through data-driven analysis, process improvement and cross-functional collaboration.</li>
+            <li>Identified regulatory compliance gaps and contributed to improvements in sustainability reporting and health & safety workflows.</li>
+            <li>Contributed to ESG metrics aligned with GRI, SASB and SDGs, supporting environmental impact assessments and risk evaluations.</li>
+            <li>Used Power BI, Excel and business process modelling to analyze trends, generate reports and support strategic decision-making.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Product Manager</div>
+              <div class="exp-company">Profit.co</div>
+            </div>
+            <span class="exp-dates">2019 – 2023</span>
+          </div>
+          <ul>
+            <li>Worked on an OKR, task management, performance management and survey SaaS platform, supporting product and business growth.</li>
+            <li>Accelerated the outbound sales cycle by 100% through the design and implementation of a customer acquisition platform for technical sales personnel.</li>
+            <li>Established strategic partnerships with 6 of 10 top state OKR companies, contributing to $20M in additional annual revenue.</li>
+            <li>Led a core SaaS product re-architecture effort that reduced client deployment time by 2 months.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Project Manager</div>
+              <div class="exp-company">Apptivo Inc</div>
+            </div>
+            <span class="exp-dates">2019 – 2023</span>
+          </div>
+          <ul>
+            <li>Led developers in building a proprietary CRM system for enterprise customers and strategic partners, optimizing sales processes and increasing sales revenue by 24%.</li>
+            <li>Curated a $2M business implementation project that addressed operational inefficiencies between sales and development, generating $3.5M in annual savings.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Web Analyst</div>
+              <div class="exp-company">Scope-Knowledge Center</div>
+            </div>
+            <span class="exp-dates">2018 – 2019</span>
+          </div>
+          <ul>
+            <li>Analyzed website traffic using Google Analytics and Adobe Analytics; partnered with marketing teams to evaluate campaigns and identify improvement opportunities.</li>
+            <li>Conducted training sessions on interpreting and using web analytics data.</li>
+          </ul>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-role">Business Analyst</div>
+              <div class="exp-company">Tablytics Market Research Private Ltd</div>
+            </div>
+            <span class="exp-dates">2017 – 2018</span>
+          </div>
+          <ul>
+            <li>Gathered and documented business requirements, analyzed existing processes, identified efficiency opportunities and created project plans, timelines and status reports.</li>
+            <li>Used Microsoft Excel to analyze large datasets and extract actionable insights.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Competencies & Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group card">
+          <h3>Product & Business</h3>
+          <div class="tags">
+            <span class="tag">Product Management</span>
+            <span class="tag">Business Analysis</span>
+            <span class="tag">Requirements Gathering</span>
+            <span class="tag">Product Lifecycle</span>
+            <span class="tag">Process Improvement</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Agile Methodologies</span>
+            <span class="tag">Project Documentation</span>
+          </div>
+        </div>
+        <div class="skill-group card">
+          <h3>Domains</h3>
+          <div class="tags">
+            <span class="tag">SaaS Products</span>
+            <span class="tag">POS</span>
+            <span class="tag">CRM</span>
+            <span class="tag">Soundbox</span>
+            <span class="tag">Payment Integration</span>
+            <span class="tag">HSE / ESG</span>
+            <span class="tag">Customer Success</span>
+            <span class="tag">QA Coordination</span>
+          </div>
+        </div>
+        <div class="skill-group card">
+          <h3>Tools & Frameworks</h3>
+          <div class="tags">
+            <span class="tag neutral">Microsoft Excel</span>
+            <span class="tag neutral">Power BI</span>
+            <span class="tag neutral">Google Analytics</span>
+            <span class="tag neutral">Adobe Analytics</span>
+            <span class="tag neutral">Business Process Modelling</span>
+            <span class="tag neutral">GRI / SASB / SDGs</span>
+          </div>
+        </div>
+        <div class="skill-group card">
+          <h3>Soft Skills & Expertise</h3>
+          <div class="tags">
+            <span class="tag">Leadership</span>
+            <span class="tag">Cross-functional Leadership</span>
+            <span class="tag">Strategic Vision</span>
+            <span class="tag">Agile Leadership</span>
+            <span class="tag">Customer-Centric</span>
+            <span class="tag">Innovation</span>
+            <span class="tag">Critical Thinking</span>
+            <span class="tag">Effective Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <div class="container">
+      <h2 class="section-title">Key Achievements</h2>
+      <div class="achievements">
+        <div class="ach-card">
+          <div class="ach-icon">💰</div>
+          <p><strong>Delivered $50M+</strong> in cost savings through identification of inefficiencies and process improvements.</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">📈</div>
+          <p><strong>Generated $5M+</strong> in business opportunities through client acquisition, product insights and high-value partnership negotiations.</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">🚀</div>
+          <p><strong>Led product ownership</strong> across POS, Warely CRM and Soundbox, improving user experience and system performance.</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">🎯</div>
+          <p><strong>Exceeded performance targets by 90%</strong> through workflow optimization and data-driven decision-making.</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">🤝</div>
+          <p><strong>Strategic partnerships</strong> with 6 of 10 top state OKR companies, contributing to $20M additional annual revenue.</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-icon">⚡</div>
+          <p><strong>Accelerated outbound sales cycle by 100%</strong> via customer acquisition platform design & implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div>
+            <div class="edu-degree">Bachelor of Electronics and Communication Engineering</div>
+            <div class="edu-school">Sri Vidya College of Engineering and Technology, Virudhunagar</div>
+          </div>
+          <span class="edu-year">2008 – 2012</span>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-degree">Higher Secondary Education</div>
+            <div class="edu-school">Seventh Day Adventist Matriculation Higher Secondary School, Madurai</div>
+          </div>
+          <span class="edu-year">2006 – 2008</span>
+        </div>
+        <div class="edu-item">
+          <div>
+            <div class="edu-degree">School Education</div>
+            <div class="edu-school">T.V.S Matriculation Higher Secondary School, Madurai</div>
+          </div>
+          <span class="edu-year">1993 – 2006</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <a href="mailto:prabhabharmanoj2010@gmail.com" class="contact-item">
+          <div class="icon">✉️</div>
+          <div class="label">Email</div>
+          <div class="value">prabhabharmanoj2010@gmail.com</div>
+        </a>
+        <a href="tel:+919843337191" class="contact-item">
+          <div class="icon">📱</div>
+          <div class="label">Phone</div>
+          <div class="value">+91 98433 37191</div>
+        </a>
+        <a href="tel:+918667668871" class="contact-item">
+          <div class="icon">📞</div>
+          <div class="label">Alternate</div>
+          <div class="value">+91 86676 68871</div>
+        </a>
+        <div class="contact-item">
+          <div class="icon">📍</div>
+          <div class="label">Location</div>
+          <div class="value">Madurai, Tamil Nadu 625001</div>
+        </div>
+      </div>
+      <div style="margin-top: 32px; text-align: center;">
+        <p style="color: var(--text-muted); margin-bottom: 16px;">Open to Product Manager, Business Analyst & Customer Success opportunities.</p>
+        <a href="mailto:prabhabharmanoj2010@gmail.com?subject=Opportunity%20Discussion" class="btn btn-primary">Send an Email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Manoj Prabhahar.J · Portfolio built for professional opportunities</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => links.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
